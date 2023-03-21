@@ -1,2 +1,2 @@
 # openmd
-open source platform for managing a repository for markdown documents
+open source platform for managing repositories for markdown documents
