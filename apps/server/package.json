@@ -1,4 +1,15 @@
 {
   "name": "@openmd/server",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nx serve",
+    "build": "nx build"
+  },
+  "devDependencies": {
+    "@nrwl/esbuild": "^15.8.9",
+    "@nrwl/js": "15.8.8",
+    "nx": "15.8.5",
+    "typescript": "~4.9.5"
+  }
 }

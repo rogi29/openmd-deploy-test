@@ -2,11 +2,28 @@
   "name": "openmd",
   "version": "0.0.1",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve",
+    "build": "nx build",
+    "lint": "nx lint"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "nx": "15.8.5"
+    "@nrwl/eslint-plugin-nx": "15.8.8",
+    "@nrwl/js": "15.8.8",
+    "@nrwl/linter": "15.8.8",
+    "@nrwl/workspace": "15.8.8",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "esbuild": "^0.17.5",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-unicorn": "^46.0.0",
+    "nx": "15.8.5",
+    "prettier": "^2.6.2",
+    "typescript": "~4.9.5"
   }
 }
