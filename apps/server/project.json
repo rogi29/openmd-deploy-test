@@ -1,19 +1,21 @@
 {
   "name": "server",
-  "$schema": "node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/server/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "apps/server/dist",
+        "outputPath": "dist/apps/server",
         "format": ["cjs"],
         "bundle": false,
         "main": "apps/server/src/main.ts",
         "tsConfig": "apps/server/tsconfig.app.json",
+        "assets": ["apps/server/src/assets"],
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
@@ -21,7 +23,6 @@
           }
         }
       },
-      "dependsOn": ["lint"],
       "configurations": {
         "development": {},
         "production": {
@@ -40,7 +41,6 @@
       "options": {
         "buildTarget": "server:build"
       },
-      "dependsOn": ["lint"],
       "configurations": {
         "development": {
           "buildTarget": "server:build:development"
@@ -54,7 +54,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["./**/*.ts"]
+        "lintFilePatterns": ["apps/server/**/*.ts"]
       }
     }
   },

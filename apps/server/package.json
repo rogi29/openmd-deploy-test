@@ -1,15 +1,37 @@
 {
   "name": "@openmd/server",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "nx serve",
-    "build": "nx build"
-  },
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
     "@nrwl/esbuild": "^15.8.9",
-    "@nrwl/js": "15.8.8",
+    "@nrwl/eslint-plugin-nx": "15.8.8",
+    "@nrwl/js": "15.8.9",
+    "@nrwl/linter": "15.8.8",
+    "@nrwl/workspace": "15.8.8",
+    "@types/express": "~4.17.13",
+    "@types/node": "~18.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "esbuild": "^0.17.5",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "^2.27.5",
     "nx": "15.8.5",
+    "prettier": "^2.6.2",
+    "ts-node": "10.9.1",
     "typescript": "~4.9.5"
+  },
+  "dependencies": {
+    "@octokit/core": "^4.2.0",
+    "@octokit/types": "^9.0.0",
+    "@types/express": "~4.17.13",
+    "axios": "^1.0.0",
+    "express": "~4.18.1",
+    "tiny-glob": "^0.2.9",
+    "tslib": "^2.3.0",
+    "fs-extra": "^11.1.1"
   }
 }
