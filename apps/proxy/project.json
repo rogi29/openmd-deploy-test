@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "proxy",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/server/src",
+  "sourceRoot": "apps/proxy/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,12 +10,12 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "dist/apps/server",
+        "outputPath": "dist/apps/proxy",
         "format": ["cjs"],
         "bundle": false,
-        "main": "apps/server/src/main.ts",
-        "tsConfig": "apps/server/tsconfig.app.json",
-        "assets": ["apps/server/src/assets"],
+        "main": "apps/proxy/src/main.ts",
+        "tsConfig": "apps/proxy/tsconfig.app.json",
+        "assets": ["apps/proxy/src/assets"],
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
@@ -35,18 +35,18 @@
         }
       }
     },
-    "serve": {
+    "start": {
       "executor": "@nrwl/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "server:build"
+        "buildTarget": "proxy:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "server:build:development"
+          "buildTarget": "proxy:build:development"
         },
         "production": {
-          "buildTarget": "server:build:production"
+          "buildTarget": "proxy:build:production"
         }
       }
     },
@@ -54,7 +54,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/server/**/*.ts"]
+        "lintFilePatterns": ["apps/proxy/**/*.ts"]
       }
     }
   },
