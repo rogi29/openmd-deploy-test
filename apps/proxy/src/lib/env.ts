@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { parseURL } from './helpers/parse-url';
+import { stringToArray } from './helpers/string-to-array';
 import { withDevDefault } from './helpers/with-dev-default';
 
 export const parseEnv = (env: typeof process.env) => {
@@ -29,6 +30,7 @@ export const envSchema = z.object({
   REDIRECT_URL: z.string().url().transform(parseURL),
   OAUTH_APP_CLIENT_ID: z.string(),
   OAUTH_APP_SECRET: z.string(),
+  OAUTH_APP_SCOPES: withDevDefault(z.string(), '').transform(stringToArray),
   npm_package_version: z.string(),
 });
 export type EnvSchemaType = z.infer<typeof envSchema>;

@@ -15,6 +15,7 @@ export const createProxyApi = (env: EnvSchemaType) => ({
     const auth = createOAuthUserAuth({
       clientId: env.OAUTH_APP_CLIENT_ID,
       clientSecret: env.OAUTH_APP_SECRET,
+      scopes: env.OAUTH_APP_SCOPES,
       code: parsedQuery.data.code,
     });
 
