@@ -1,6 +1,5 @@
-import { config as injectEnv } from 'dotenv';
 import express from 'express';
-import { parseEnv } from './lib/env';
+import { injectEnv, parseEnv } from './lib/env';
 import { proxyErrorHandler } from './lib/error';
 import { createLoggerMiddleware } from './lib/logger';
 import { createProxyApi } from './lib/proxy';
@@ -15,6 +14,7 @@ function run() {
 
   app.use(loggerMiddleware);
   app.get('/auth', proxyErrorHandler(proxyApi.auth));
+  app.get('/status', proxyErrorHandler(proxyApi.status));
   app.get('/', async (_, res) => {
     res.send({ version: env.npm_package_version });
   });
